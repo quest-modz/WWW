@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>guns.lol style page</title>
+  <title>Page Creator</title>
   <style>
     :root {
       --bg: #0a0a0a;
@@ -32,242 +32,181 @@
 
     .container {
       width: 100%;
-      max-width: 420px;
+      max-width: 480px;
     }
 
-    /* Profile Card */
-    .profile {
+    .card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 32px 24px;
-      text-align: center;
-      margin-bottom: 24px;
-    }
-
-    .avatar {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--accent);
-      margin-bottom: 16px;
-    }
-
-    .name {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .username {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 14px;
-    }
-
-    .bio {
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.5;
+      border-radius: 18px;
+      padding: 28px 24px;
       margin-bottom: 20px;
     }
 
-    /* Links */
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 6px;
     }
 
-    .link-btn {
-      display: block;
-      background: var(--card);
-      border: 1px solid var(--border);
-      color: var(--text);
-      text-decoration: none;
-      padding: 16px;
-      border-radius: 14px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.2s ease;
-      text-align: center;
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
     }
 
-    .link-btn:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    /* Editor Panel */
-    .editor {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px;
-      margin-top: 30px;
-    }
-
-    .editor h3 {
-      margin-bottom: 16px;
-      font-size: 1.1rem;
-    }
-
-    .editor label {
+    label {
       display: block;
       font-size: 0.85rem;
       color: var(--muted);
-      margin-bottom: 4px;
-      margin-top: 12px;
+      margin-bottom: 5px;
+      margin-top: 14px;
     }
 
-    .editor input,
-    .editor textarea {
+    input, textarea {
       width: 100%;
       background: #1c1c1c;
       border: 1px solid var(--border);
       color: white;
-      padding: 10px 12px;
-      border-radius: 8px;
+      padding: 11px 13px;
+      border-radius: 9px;
       font-size: 0.95rem;
     }
 
-    .editor textarea {
-      min-height: 70px;
+    textarea {
+      min-height: 80px;
       resize: vertical;
     }
 
-    .editor button {
+    button {
       width: 100%;
-      margin-top: 18px;
+      margin-top: 22px;
       background: var(--accent);
       color: white;
       border: none;
-      padding: 12px;
-      border-radius: 10px;
+      padding: 14px;
+      border-radius: 11px;
       font-weight: 600;
-      cursor: pointer;
       font-size: 1rem;
+      cursor: pointer;
+      transition: 0.15s;
     }
 
-    .editor button:hover {
+    button:hover {
       opacity: 0.9;
+      transform: translateY(-1px);
     }
 
-    .footer {
-      text-align: center;
-      margin-top: 30px;
+    .preview-title {
+      font-size: 1.1rem;
+      margin-bottom: 14px;
       color: var(--muted);
-      font-size: 0.8rem;
+    }
+
+    /* Live Preview Styles */
+    .preview {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .preview .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .preview .name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .preview .username {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .preview .bio {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 22px;
+    }
+
+    .preview .links {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .preview .link-btn {
+      display: block;
+      background: #1c1c1c;
+      border: 1px solid var(--border);
+      color: white;
+      text-decoration: none;
+      padding: 15px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .preview .link-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
     }
   </style>
 </head>
 <body>
   <div class="container">
 
-    <!-- PROFILE -->
-    <div class="profile">
-      <img id="avatar" class="avatar" src="https://i.imgur.com/8Km9tLL.png" alt="avatar">
-      <div class="name" id="displayName">Your Name</div>
-      <div class="username" id="username">@yourname</div>
-      <div class="bio" id="bio">This is your bio. Edit it below.</div>
-    </div>
-
-    <!-- LINKS -->
-    <div class="links" id="links">
-      <!-- Links will be generated here -->
-    </div>
-
-    <!-- EDITOR -->
-    <div class="editor">
-      <h3>Create / Edit Page</h3>
+    <div class="card">
+      <h1>Create Page</h1>
+      <div class="subtitle">Fill in the info → Generate a real HTML page</div>
 
       <label>Display Name</label>
-      <input type="text" id="inputName" placeholder="Your Name">
+      <input type="text" id="name" placeholder="Your Name" value="Your Name">
 
       <label>Username</label>
-      <input type="text" id="inputUser" placeholder="@yourname">
+      <input type="text" id="username" placeholder="@yourname" value="@yourname">
 
       <label>Bio</label>
-      <textarea id="inputBio" placeholder="Write something about yourself..."></textarea>
+      <textarea id="bio" placeholder="Write a short bio...">This is my page.</textarea>
 
       <label>Avatar URL</label>
-      <input type="text" id="inputAvatar" placeholder="https://...">
+      <input type="text" id="avatar" placeholder="https://..." value="https://i.imgur.com/8Km9tLL.png">
 
       <label>Links (one per line: Title | URL)</label>
-      <textarea id="inputLinks" placeholder="Discord | https://discord.gg/&#10;YouTube | https://youtube.com/&#10;GitHub | https://github.com/"></textarea>
+      <textarea id="links" placeholder="Discord | https://discord.gg/&#10;YouTube | https://youtube.com/">Discord | https://discord.gg/
+YouTube | https://youtube.com/
+GitHub | https://github.com/</textarea>
 
-      <button onclick="updatePage()">Update Page</button>
+      <button onclick="createPage()">Create & Download Page</button>
     </div>
 
-    <div class="footer">
-      guns.lol style • local only
+    <div class="preview-title">Live Preview</div>
+    <div class="preview" id="preview">
+      <!-- Preview will be rendered here -->
     </div>
+
   </div>
 
   <script>
-    // Default data
-    const defaultData = {
-      name: "Your Name",
-      username: "@yourname",
-      bio: "This is your bio. Edit it below.",
-      avatar: "https://i.imgur.com/8Km9tLL.png",
-      links: [
-        { title: "Discord", url: "https://discord.gg/" },
-        { title: "YouTube", url: "https://youtube.com/" },
-        { title: "GitHub", url: "https://github.com/" }
-      ]
-    };
+    const nameInput = document.getElementById("name");
+    const usernameInput = document.getElementById("username");
+    const bioInput = document.getElementById("bio");
+    const avatarInput = document.getElementById("avatar");
+    const linksInput = document.getElementById("links");
 
-    // Load saved data or use default
-    function loadData() {
-      const saved = localStorage.getItem("gunsPage");
-      return saved ? JSON.parse(saved) : defaultData;
-    }
-
-    function saveData(data) {
-      localStorage.setItem("gunsPage", JSON.stringify(data));
-    }
-
-    function render(data) {
-      document.getElementById("displayName").textContent = data.name;
-      document.getElementById("username").textContent = data.username;
-      document.getElementById("bio").textContent = data.bio;
-      document.getElementById("avatar").src = data.avatar || defaultData.avatar;
-
-      const linksContainer = document.getElementById("links");
-      linksContainer.innerHTML = "";
-
-      data.links.forEach(link => {
-        if (!link.title || !link.url) return;
-        const a = document.createElement("a");
-        a.className = "link-btn";
-        a.href = link.url;
-        a.target = "_blank";
-        a.rel = "noopener noreferrer";
-        a.textContent = link.title;
-        linksContainer.appendChild(a);
-      });
-
-      // Fill editor fields
-      document.getElementById("inputName").value = data.name;
-      document.getElementById("inputUser").value = data.username;
-      document.getElementById("inputBio").value = data.bio;
-      document.getElementById("inputAvatar").value = data.avatar;
-      document.getElementById("inputLinks").value = data.links
-        .map(l => `${l.title} | ${l.url}`)
-        .join("\n");
-    }
-
-    function updatePage() {
-      const name = document.getElementById("inputName").value.trim() || "Your Name";
-      const username = document.getElementById("inputUser").value.trim() || "@yourname";
-      const bio = document.getElementById("inputBio").value.trim() || "";
-      const avatar = document.getElementById("inputAvatar").value.trim();
-
-      const linksRaw = document.getElementById("inputLinks").value.trim();
-      const links = linksRaw
+    function getData() {
+      const links = linksInput.value
+        .trim()
         .split("\n")
         .map(line => {
           const [title, ...urlParts] = line.split("|");
@@ -278,13 +217,133 @@
         })
         .filter(l => l.title && l.url);
 
-      const data = { name, username, bio, avatar, links };
-      saveData(data);
-      render(data);
+      return {
+        name: nameInput.value.trim() || "Your Name",
+        username: usernameInput.value.trim() || "@yourname",
+        bio: bioInput.value.trim() || "",
+        avatar: avatarInput.value.trim() || "https://i.imgur.com/8Km9tLL.png",
+        links
+      };
     }
 
-    // Init
-    render(loadData());
+    function renderPreview() {
+      const data = getData();
+      const preview = document.getElementById("preview");
+
+      let linksHTML = data.links.map(l => 
+        `<a class="link-btn" href="${l.url}" target="_blank">${l.title}</a>`
+      ).join("");
+
+      preview.innerHTML = `
+        <img class="avatar" src="${data.avatar}" alt="avatar">
+        <div class="name">${data.name}</div>
+        <div class="username">${data.username}</div>
+        <div class="bio">${data.bio}</div>
+        <div class="links">${linksHTML}</div>
+      `;
+    }
+
+    // Live preview
+    [nameInput, usernameInput, bioInput, avatarInput, linksInput].forEach(el => {
+      el.addEventListener("input", renderPreview);
+    });
+
+    renderPreview();
+
+    function createPage() {
+      const data = getData();
+
+      const linksHTML = data.links.map(l => 
+        `    <a class="link-btn" href="${l.url}" target="_blank" rel="noopener">${l.title}</a>`
+      ).join("\n");
+
+      const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>${data.name}</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --card: #141414;
+      --text: #ffffff;
+      --muted: #a0a0a0;
+      --accent: #ff3c3c;
+      --border: #2a2a2a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 16px;
+    }
+    .container { width: 100%; max-width: 420px; }
+    .profile {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 28px;
+      text-align: center;
+    }
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      margin-bottom: 16px;
+    }
+    .name { font-size: 1.6rem; font-weight: 700; margin-bottom: 6px; }
+    .username { color: var(--muted); font-size: 0.95rem; margin-bottom: 14px; }
+    .bio { color: var(--muted); font-size: 0.95rem; line-height: 1.5; margin-bottom: 24px; }
+    .links { display: flex; flex-direction: column; gap: 12px; }
+    .link-btn {
+      display: block;
+      background: #1c1c1c;
+      border: 1px solid var(--border);
+      color: white;
+      text-decoration: none;
+      padding: 16px;
+      border-radius: 14px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .link-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="profile">
+      <img class="avatar" src="${data.avatar}" alt="avatar">
+      <div class="name">${data.name}</div>
+      <div class="username">${data.username}</div>
+      <div class="bio">${data.bio}</div>
+      <div class="links">
+${linksHTML}
+      </div>
+    </div>
+  </div>
+</body>
+</html>`;
+
+      // Download the file
+      const blob = new Blob([html], { type: "text/html" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = (data.username.replace("@", "") || "page") + ".html";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
   </script>
 </body>
 </html>
